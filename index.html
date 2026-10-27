@@ -110,12 +110,12 @@
         const endTime = startTime + duration;
         const videoUrl = document.getElementById('videoUrl').value;
 
-        // Kirim request ke backend Express (port 3000)
-        const response = await fetch('http://localhost:3000/api/cut', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ videoUrl, startTime, endTime })
-        });
+       // Ganti URL ini dengan URL Localtunnel terbarumu
+const response = await fetch('https://gorgeous-cats-sing.loca.lt/api/cut', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ videoUrl, startTime, endTime })
+});
 
         if (!response.ok) {
             throw new Error('Gagal memproses video dari server.');
