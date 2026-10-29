@@ -112,10 +112,13 @@
 
        // Ganti URL ini dengan URL Localtunnel terbarumu
 const response = await fetch('https://young-moose-camp.loca.lt/api/cut', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ videoUrl, startTime, endTime })
-});
+        method: 'POST',
+        headers: { 
+            'Content-Type': 'application/json',
+            'Bypass-Tunnel-Reminder': 'true'
+        },
+        body: JSON.stringify({ videoUrl, startTime, endTime })
+    });
 
         if (!response.ok) {
             throw new Error('Gagal memproses video dari server.');
